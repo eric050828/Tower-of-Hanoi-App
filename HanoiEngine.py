@@ -4,6 +4,9 @@ class HanoiEngine:
         self.num_discs=num_discs
         self.reset()
         pass
+    
+    def setGui(self,gui):
+        self.gui=gui
 
     def reset(self,):
         self.pegs=[list(range(self.num_discs,0,-1)),[],[]]
@@ -15,7 +18,7 @@ class HanoiEngine:
     def run(self,):
         while self.flag and self.count:
             self.nextStep()
-            sleep(1)
+            sleep(0.5)
         pass
 
     def pauseAndResume(self,):
@@ -41,6 +44,7 @@ class HanoiEngine:
 
     def moveDisc(self,src,dst):
         self.pegs[dst].append(self.pegs[src].pop())
+        self.gui.showDiscAnimation()
         pass
 
 if __name__ == '__main__':

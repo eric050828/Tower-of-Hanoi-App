@@ -228,4 +228,3 @@ Temporary Items
 .git/
 .venv/
 .env
-test.py

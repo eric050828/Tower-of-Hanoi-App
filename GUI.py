@@ -2,6 +2,7 @@ from tkinter import *
 class GUI:
     def __init__(self,window,num_discs,hanoi_engine):
         self.hanoi_engine=hanoi_engine
+        self.discs=self.hanoi_engine.pegs
         self.interface_config={
             'window':window,
             'num_discs':num_discs,
@@ -37,10 +38,10 @@ class GUI:
     def initButtons(self,):
         self.input_number = Entry(self.frame).grid(row=0,column=0)
         self.run_btn = Button(self.frame,text='<Run>',command=self.hanoi_engine.run).grid(row=0, column=1)
-        self.pause_btn = Button(self.frame,text='<Pause/Resume>',command=self.hanoi_engine.pauseAndResume).grid(row=1, column=1)
+        self.pause_btn = Button(self.frame,text='<Pause/Resume>',command=self.hanoi_engine.pauseAndResume,default='active').grid(row=1, column=1)
         self.next_btn = Button(self.frame,text='<Next Step>',command=self.hanoi_engine.nextStep).grid(row=2, column=1)
         self.reset_btn=Button(self.frame,text='<Reset>',command=self.hanoi_engine.reset).grid(row=3, column=1)
-        pass
+        
     
     def drawPegs(self,width,height):
         for i in range(3):
@@ -52,7 +53,9 @@ class GUI:
         pass
     
     def drawDiscs(self,width,height):
-        pass
+        for i in range(self.num_discs):
+            disc = self.canvas.create_rectangle(0, 0, 0, 0, fill="")
+            self.discs.append(disc)
 
     def showDiscAnimation(self,):
         pass

@@ -1,8 +1,9 @@
 """
 2023/11/08
 NTUST MIS
-B11209024 李O穎
+Create by:李丞穎
 Tower of Hanoi App
+source:https://github.com/eric050828/Tower-of-Hanoi-App
 """
 from tkinter import *
 from threading import *
@@ -184,9 +185,11 @@ frame.pack()
 button_width = 20
 button_height = 1
 box_width = 20
-num_box = Entry(frame, width=box_width)
+default_num_discs = "3"
+num_box = Entry(frame, width=box_width,textvariable=StringVar(value=default_num_discs))
 num_box.grid(row=0, column=0)
-speed_box = Entry(frame, width=box_width)
+default_speed = 10
+speed_box = Entry(frame, width=box_width,textvariable=StringVar(value=default_speed))
 speed_box.grid(row=1, column=0)
 btn_run = Button(frame, text= "<Run!>", width=button_width, height=button_height, command=threadRun)
 btn_run.grid(row=0, column=1)
@@ -205,7 +208,6 @@ pegs = [[], [], []]
 drawPegs()
 
 # discs
-default_num_discs = 3
 num_discs = getDiscNum()
 disc_width = 20
 disc_height = 10
@@ -213,7 +215,6 @@ drawDiscs()
 
 # hanoi logic
 move_count = 2 ** num_discs - 1
-default_speed = 10
 speed = 1/getSpeed()
 hanoi = towerOfHanoi(num_discs,0,1,2)
 

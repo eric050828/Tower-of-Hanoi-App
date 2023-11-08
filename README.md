@@ -22,14 +22,17 @@ $ python app.py
 - Next Step : Manually execute the next step of the solving animation.
 - Reset : Reset the entire program. (Note: Clicking this button will update the new values you entered.)
 
-# Know issues
+# Known issues
 
 ---
 
-- Q: The 'Pause' button is not working properly.
-- A: Attempting to fix now.
+## Q: The 'Pause' button is not working properly.
 
-- Q: The app is prone to crashing.
-- A: Try to avoid the following behaviors while using it:
-  - Do not press any buttons while the animation is running until it has finished executing.
-  - Try to avoid multiple operations within a short period of time.
+### A: Attempting to fix now.
+
+## Q: The app is prone to crashing.
+
+### A: Try to avoid the following behaviors while using it:
+
+- Do not press any buttons while the animation is running until it has finished executing.
+- Try to avoid multiple operations within a short period of time.

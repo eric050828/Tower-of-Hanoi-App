@@ -102,7 +102,7 @@ def nextStep():
         event_finished.set()
 
 def reset():
-    global pegs, num_discs, speed, hanoi
+    global pegs, num_discs, speed, hanoi, colors
     canvas.delete(*canvas.find_all())
     btn_run.config(state=NORMAL)
     btn_pause.config(state=NORMAL)
@@ -110,6 +110,7 @@ def reset():
     pegs = [[], [], []]
     drawPegs()
     num_discs = getDiscNum()
+    colors = [colorsys.hsv_to_rgb(i / num_discs, 1, 1) for i in range(num_discs)]
     drawDiscs()
     speed = 1/(getSpeed()*10)
     hanoi = towerOfHanoi(num_discs,0,1,2)
@@ -167,7 +168,6 @@ def getDiscPosition(index:int,number:int, peg:int):
     y1 = y0 + disc_height
     return [x0, y0, x1, y1]
 
-colors = [colorsys.hsv_to_rgb(i / num_discs, 1, 1) for i in range(num_discs)]
 def drawDiscs():
     for i in range(num_discs):  # 小 -> 大 , 上 -> 下
         # color = "#" + "".join([hex(randint(0, 255))[2:].zfill(2) for j in range(3)])
@@ -234,6 +234,7 @@ drawPegs()
 num_discs = getDiscNum()
 disc_width = 20
 disc_height = 10
+colors = [colorsys.hsv_to_rgb(i / num_discs, 1, 1) for i in range(num_discs)]
 drawDiscs()
 
 # hanoi logic

@@ -20,6 +20,8 @@ python app.py
 
 ## How to Use
 
+![Alt text](/assets/image.png)
+
 1. Enter the number of discs in the input box (recommended range: 1-16).
 2. Set the animation speed using the speed input box (recommended range: 1-10).
 3. Click the "Run" button to start the automatic animation.
